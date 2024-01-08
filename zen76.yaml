@@ -119,8 +119,13 @@ trigger:
       device_id: !input zooz_zen76
 action:
   - variables:
+      command_class_name: '{{ trigger.event.data.command_class_name }}'
       scene_id: "{{ trigger.event.data.label }}"
       attribute_id: "{{ trigger.event.data.value }}"
+  - service: logbook.log
+    data:
+      name: 'Z-Wave JS Blueprint'
+      message: 'received event: {{ command_class_name }} - {{ attribute_id }} - {{ scene_id }}'
   - choose:
       - conditions: "{{ scene_id == 'Scene 001' }}"
         sequence:
