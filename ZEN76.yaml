@@ -112,7 +112,7 @@ blueprint:
 mode: single
 max_exceeded: silent
 variables:
-  device_id: !input 'zooz_switch'
+  device_id: !input 'zooz_zen76'
 trigger:
   - platform: event
     event_type: zwave_js_value_notification
