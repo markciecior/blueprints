@@ -127,8 +127,8 @@ action:
       value: '{{ trigger.event.data.value }}'
   - service: logbook.log
     data:
-	  name: 'Z-Wave JS'
-	  message: 'received event: {{ command_class_name }} - {{ value }} - {{ label }}'
+      name: 'Z-Wave JS'
+      message: 'received event: {{ command_class_name }} - {{ value }} - {{ label }}'
   - choose:
       - conditions: "{{ scene_id == 'Scene 001' }}"
         sequence:
